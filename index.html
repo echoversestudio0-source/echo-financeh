@@ -4,340 +4,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#190014">
-<title>For My Sonai ❤️</title>
+<title>Happy Birthday Sonai ❤️</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  background:#170011;
-  color:white;
-  font-family:'Poppins',sans-serif;
-  overflow-x:hidden;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-button{cursor:pointer;font-family:inherit}
-
-#intro{
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:radial-gradient(circle,#60002f,#190014 75%);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  transition:1s;
+body {
+  font-family: Georgia, serif;
+  background: #100611;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-.intro-box{
-  max-width:400px;
-  animation:appear 2s ease;
+button {
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+  padding: 13px 25px;
+  color: white;
+  background: linear-gradient(135deg,#ff2678,#a50065);
+  box-shadow: 0 0 20px #ff267888;
 }
 
-.intro-rose{
-  font-size:85px;
-  animation:float 3s infinite ease-in-out;
+button:active {
+  transform: scale(.96);
 }
 
-.script{
-  font-family:'Great Vibes',cursive;
-  color:#ffb1d2;
-  font-size:48px;
+section {
+  padding: 65px 18px;
 }
 
-.intro-box p{
-  color:#f6cadc;
-  margin:20px 0;
-  line-height:1.8;
-  font-size:13px;
-  letter-spacing:2px;
+h1,h2 {
+  color: #ff9ac5;
+  margin-bottom: 18px;
+  text-shadow: 0 0 15px #ff2688;
 }
 
-.pink-btn{
-  padding:15px 32px;
-  border:1px solid #ff9fc8;
-  border-radius:40px;
-  color:white;
-  background:linear-gradient(45deg,#a50052,#ff4f9b);
-  box-shadow:0 0 25px #ff1680;
-  font-size:14px;
-  transition:.3s;
+p {
+  line-height: 1.8;
+  color: #f8dce9;
 }
 
-.pink-btn:active{transform:scale(.94)}
+/* Entrance */
+#entrance {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: radial-gradient(circle,#45102f,#100611 75%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px;
+}
 
-#main{
-  display:none;
-  min-height:100vh;
+#entrance h1 {
+  font-size: 36px;
+}
+
+#entrance p {
+  margin: 15px 0 25px;
+}
+
+/* Main */
+#main {
+  display: none;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background:
-    radial-gradient(ellipse at top,#520027 0%,#200015 45%,#10000d 100%);
+    linear-gradient(#16041699,#160416dd),
+    radial-gradient(circle at top,#8b174d,#160416 70%);
+  padding: 30px 15px;
 }
 
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:50px 18px;
-  position:relative;
+.hero h1 {
+  font-size: clamp(38px,9vw,65px);
 }
 
-.top-label{
-  color:#ffc1dc;
-  font-size:10px;
-  letter-spacing:5px;
-  text-transform:uppercase;
+.hero .subtitle {
+  font-size: 19px;
+  margin: 12px 0;
 }
 
-.hero h1{
-  font-family:'Great Vibes',cursive;
-  color:#ff9dc8;
-  font-size:65px;
-  margin:15px 0;
-  text-shadow:0 0 25px #ff1680;
+.heart {
+  font-size: 55px;
+  animation: heartbeat 1.2s infinite;
 }
 
-.hero .sub{
-  font-family:'Playfair Display',serif;
-  color:#fce2ed;
-  letter-spacing:2px;
-  font-size:13px;
+@keyframes heartbeat {
+  50% { transform: scale(1.25); }
 }
 
-.glow-heart{
-  font-size:40px;
-  margin:20px;
-  animation:heartbeat 1.3s infinite;
+/* Countdown */
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
-@keyframes heartbeat{
-  50%{transform:scale(1.25)}
+.time-box {
+  background: #ffffff12;
+  border: 1px solid #ff78b866;
+  border-radius: 15px;
+  padding: 16px 12px;
+  min-width: 72px;
+  box-shadow: 0 0 15px #ff267822;
 }
 
-.photo-frame{
-  width:min(85%,350px);
-  padding:9px;
-  border-radius:180px 180px 25px 25px;
-  border:1px solid #ff9bc9;
-  background:linear-gradient(145deg,#ffb6d5,#7b1749,#ffc0d9);
-  box-shadow:0 0 35px #ff1980;
-  margin:25px auto;
-  animation:appear 2s ease;
+.time-box strong {
+  display: block;
+  font-size: 27px;
+  color: #ff9ac5;
 }
 
-.photo-frame img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-  object-position:center 35%;
-  border-radius:175px 175px 18px 18px;
-  display:block;
+.time-box span {
+  font-size: 12px;
 }
 
-.hero-text{
-  color:#ffd4e5;
-  line-height:2;
-  font-size:13px;
-  max-width:330px;
-  margin:15px auto;
+/* Photos */
+.memories-grid {
+  max-width: 850px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
 }
 
-.section{
-  padding:75px 20px;
-  text-align:center;
-  max-width:600px;
-  margin:auto;
+.memory-photo {
+  background: #ffffff12;
+  padding: 10px;
+  border: 1px solid #ff8ab855;
+  border-radius: 17px;
+  box-shadow: 0 5px 25px #0008;
 }
 
-.section-title{
-  font-family:'Great Vibes',cursive;
-  color:#ff9dc8;
-  font-size:48px;
-  margin-bottom:12px;
+.memory-photo img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-.small-text{
-  color:#e9b8cf;
-  font-size:12px;
-  line-height:2;
+.memory-photo p {
+  padding: 10px 2px 3px;
+  font-size: 14px;
+  color: #ffc0dc;
 }
 
-.divider{
-  width:90px;
-  height:1px;
-  background:#ff85b9;
-  margin:22px auto;
-  box-shadow:0 0 10px #ff1680;
+/* Voice */
+.voice-card,.letter-card {
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: #ffffff12;
+  border: 1px solid #ff8ab855;
 }
 
-.countdown-box{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:9px;
-  margin:30px auto;
+audio {
+  width: 100%;
+  margin-top: 15px;
 }
 
-.time-card{
-  background:linear-gradient(145deg,#57002f,#290019);
-  border:1px solid #a84370;
-  padding:17px 3px;
-  border-radius:15px;
-  box-shadow:0 0 15px #70003c;
+/* Cake */
+.cake {
+  font-size: 100px;
+  margin: 20px;
+  animation: cakeBounce 2s infinite;
 }
 
-.time-card span{
-  display:block;
-  font-size:29px;
-  font-weight:600;
-  color:#ffafd0;
+@keyframes cakeBounce {
+  50% { transform: translateY(-12px); }
 }
 
-.time-card small{
-  color:#eeb9d1;
-  font-size:10px;
-  letter-spacing:1px;
+/* Surprise */
+#birthday {
+  display: none;
+  background: radial-gradient(circle,#601338,#160416 75%);
+  animation: appear 1.5s ease;
 }
 
-.date-text{
-  color:#ffb2d0;
-  letter-spacing:3px;
-  font-size:12px;
+@keyframes appear {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.memory-card{
-  padding:25px;
-  background:linear-gradient(145deg,#44001f,#240014);
-  border:1px solid #9b3c67;
-  border-radius:20px;
-  margin-top:25px;
-  box-shadow:0 0 25px #56002e;
+/* Floating hearts */
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  z-index: 5;
+  pointer-events: none;
+  animation: floatUp 7s linear forwards;
 }
 
-.memory-card .big{
-  font-size:48px;
-  margin-bottom:15px;
-}
-
-.memory-card p{
-  font-family:'Playfair Display',serif;
-  font-size:15px;
-  color:#ffd8e8;
-  line-height:2;
-}
-
-#birthday{
-  display:none;
-}
-
-.birthday-title{
-  font-family:'Great Vibes',cursive;
-  font-size:55px;
-  color:#ff9bc8;
-  text-shadow:0 0 25px #ff1680;
-}
-
-.cake{
-  font-size:90px;
-  margin:25px 0;
-  animation:cake 1.5s infinite alternate;
-}
-
-@keyframes cake{
-  to{transform:translateY(-12px) rotate(3deg)}
-}
-
-.letter{
-  background:linear-gradient(145deg,#4b002b,#250017);
-  border:1px solid #d16c9c;
-  padding:27px 20px;
-  border-radius:20px;
-  margin-top:25px;
-  text-align:left;
-  color:#ffe1ed;
-  line-height:2;
-  font-family:'Playfair Display',serif;
-  font-size:14px;
-  display:none;
-  animation:appear 1s ease;
-}
-
-.letter h3{
-  font-family:'Great Vibes',cursive;
-  color:#ff9dcc;
-  font-size:38px;
-  text-align:center;
-  margin-bottom:20px;
-}
-
-#surprise{
-  display:none;
-  padding:25px 15px;
-  color:#ffc4dd;
-  line-height:2;
-  animation:appear 1s ease;
-}
-
-#music{
-  position:fixed;
-  right:15px;
-  top:15px;
-  z-index:20;
-  padding:11px 15px;
-  border-radius:30px;
-  color:white;
-  background:#700039;
-  border:1px solid #ff8fbe;
-  font-size:12px;
-}
-
-#fireworks{
-  position:fixed;
-  inset:0;
-  width:100%;
-  height:100%;
-  z-index:10;
-  pointer-events:none;
-}
-
-.particle{
-  position:fixed;
-  z-index:9;
-  bottom:-40px;
-  pointer-events:none;
-  animation:rise 7s linear forwards;
-}
-
-@keyframes rise{
-  to{
-    transform:translateY(-110vh) rotate(400deg);
-    opacity:0;
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
   }
 }
 
-@keyframes appear{
-  from{opacity:0;transform:translateY(25px)}
-  to{opacity:1;transform:translateY(0)}
+/* Fireworks */
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
 }
 
-footer{
-  padding:35px 10px;
-  text-align:center;
-  color:#e7a9c7;
-  font-size:11px;
-  letter-spacing:2px;
+footer {
+  padding: 30px 15px;
+  color: #e7a5c2;
+  font-size: 13px;
 }
 
-@media(max-width:380px){
-  .hero h1{font-size:53px}
-  .photo-frame img{height:350px}
-  .time-card span{font-size:23px}
+@media(max-width:480px) {
+  .memories-grid {
+    gap: 10px;
+  }
+  .memory-photo {
+    padding: 7px;
+  }
 }
 </style>
 </head>
@@ -346,569 +248,274 @@ footer{
 
 <canvas id="fireworks"></canvas>
 
-<!-- SECRET ENTRANCE -->
-
-<div id="intro">
-
-  <div class="intro-box">
-
-    <div class="intro-rose">🌹</div>
-
-    <div class="script">For My Sonai</div>
-
-    <p>
-      A LITTLE SURPRISE<br>
-      MADE WITH ALL MY LOVE<br>
-      JUST FOR YOU
-    </p>
-
-    <button class="pink-btn" onclick="openWebsite()">
-      OPEN YOUR SURPRISE ❤️
-    </button>
-
-    <p style="font-size:10px;margin-top:30px">
-      YOUR SPECIAL DAY IS COMING...
-    </p>
-
-  </div>
-
+<!-- Secret Entrance -->
+<div id="entrance">
+  <div class="heart">❤️</div>
+  <h1>Hey Sonai...</h1>
+  <p>I have created something special just for you.</p>
+  <button onclick="openSurprise()">Open Your Surprise 💌</button>
 </div>
-
-<!-- MAIN WEBSITE -->
 
 <div id="main">
 
-<button id="music" onclick="toggleMusic()">
-  ♫ Play Music
-</button>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="heart">❤️</div>
+    <h1>My Beautiful Sonai</h1>
+    <p class="subtitle">You are my favourite chapter of life.</p>
+    <p>Something magical is waiting for you...</p>
 
-<section class="hero">
-
-  <div class="top-label">
-    A STORY WRITTEN WITH LOVE
-  </div>
-
-  <div class="glow-heart">❤️</div>
-
-  <h1>My Beautiful Sonai</h1>
-
-  <div class="sub">
-    YOU ARE MY FAVOURITE PERSON
-  </div>
-
-  <div class="photo-frame">
-    <img src="couple.jpg" alt="Our Beautiful Memories">
-  </div>
-
-  <div class="hero-text">
-    In a world full of people,
-    my heart found its home in you.
-    You make my ordinary days magical. ❤️
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="script" style="font-size:35px">
-    Forever & Always
-  </div>
-
-</section>
-
-<section class="section" id="countdownSection">
-
-  <div class="section-title">
-    A Special Day Is Near
-  </div>
-
-  <p class="small-text">
-    Counting every second until the day
-    my favourite person was born.
-  </p>
-
-  <div class="countdown-box" id="countdown">
-
-    <div class="time-card">
-      <span id="days">00</span>
-      <small>DAYS</small>
+    <div class="countdown" id="countdown">
+      <div class="time-box">
+        <strong id="days">00</strong>
+        <span>DAYS</span>
+      </div>
+      <div class="time-box">
+        <strong id="hours">00</strong>
+        <span>HOURS</span>
+      </div>
+      <div class="time-box">
+        <strong id="minutes">00</strong>
+        <span>MINUTES</span>
+      </div>
+      <div class="time-box">
+        <strong id="seconds">00</strong>
+        <span>SECONDS</span>
+      </div>
     </div>
-
-    <div class="time-card">
-      <span id="hours">00</span>
-      <small>HOURS</small>
-    </div>
-
-    <div class="time-card">
-      <span id="minutes">00</span>
-      <small>MINUTES</small>
-    </div>
-
-    <div class="time-card">
-      <span id="seconds">00</span>
-      <small>SECONDS</small>
-    </div>
-
-  </div>
-
-  <div class="date-text">
-    22 NOVEMBER 2026
-  </div>
-
-  <div class="divider"></div>
-
-  <p class="small-text">
-    Every second brings us closer to your beautiful day. ❤️
-  </p>
-
-</section>
-
-<section class="section">
-
-  <div class="section-title">
-    Why You Are Special
-  </div>
-
-  <div class="memory-card">
-    <div class="big">🌹</div>
-    <p>
-      Your smile is my favourite sunshine.
-      Your happiness is my favourite wish.
-      And your presence is my favourite gift.
+    <p id="countdownText" style="margin-top:20px">
+      Counting every moment until your special day ❤️
     </p>
   </div>
 
-  <div class="memory-card">
-    <div class="big">💖</div>
-    <p>
-      If I could choose one person
-      to walk through life with,
-      I would choose you again and again.
-    </p>
-  </div>
+  <!-- Memories -->
+  <section>
+    <h2>Our Beautiful Memories 📸</h2>
+    <p>Every picture holds a little piece of my heart.</p>
 
-  <div class="memory-card">
-    <div class="big">💍</div>
-    <p>
-      My favourite place in this world
-      is wherever you are.
-    </p>
-  </div>
+    <div class="memories-grid">
+      <div class="memory-photo">
+        <img src="our-first-moment.jpg" alt="Our First Moment">
+        <p>Our Beautiful Beginning ❤️</p>
+      </div>
 
-</section>
+      <div class="memory-photo">
+        <img src="my-sweetheart.jpg" alt="My Sweetheart">
+        <p>Your Smile, My Happiness 💕</p>
+      </div>
 
-<!-- BIRTHDAY CELEBRATION -->
+      <div class="memory-photo">
+        <img src="endless-love.jpg" alt="Endless Love">
+        <p>Moments To Remember 🌹</p>
+      </div>
 
-<section class="section" id="birthday">
+      <div class="memory-photo">
+        <img src="forever-together.jpg" alt="Forever Together">
+        <p>Forever My Favourite Person 💖</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="birthday-title">
-    Happy Birthday
-  </div>
+  <!-- Voice Message -->
+  <section>
+    <h2>A Message From My Heart 🎧</h2>
+    <div class="voice-card">
+      <p>Sonai, this little voice message is only for you.</p>
+      <audio controls preload="none">
+        <source src="wish.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio>
+    </div>
+  </section>
 
-  <h1 style="color:#ff9dc8;font-size:38px">
-    SONAI ❤️
-  </h1>
+  <!-- Love Letter -->
+  <section>
+    <h2>A Little Love Letter 💌</h2>
+    <div class="letter-card">
+      <p>
+        My dearest Sonai,<br><br>
+        You make my ordinary days feel special.
+        Your smile brings happiness to my heart,
+        and every moment with you becomes a beautiful memory.<br><br>
+        I may not have the perfect words to explain
+        how much you mean to me, but I hope you always
+        feel how special you are in my life.<br><br>
+        Keep smiling, keep shining, and never stop
+        being the wonderful person you are.<br><br>
+        Forever yours ❤️
+      </p>
+    </div>
+  </section>
 
-  <div class="cake">🎂</div>
+  <!-- Birthday Surprise -->
+  <section id="birthday">
+    <div class="heart">❤️</div>
+    <h1>HAPPY BIRTHDAY SONAI!</h1>
+    <p style="font-size:20px">22 November 2026</p>
 
-  <div class="script" style="font-size:36px">
-    Today Is All About You
-  </div>
+    <div class="cake">🎂</div>
 
-  <div class="photo-frame">
-    <img src="couple.jpg" alt="Our Love">
-  </div>
-
-  <p class="hero-text">
-
-    Happy Birthday, My Love! ❤️
-
-    <br><br>
-
-    আজকের দিনটা আমার কাছে পৃথিবীর
-    সবচেয়ে সুন্দর দিনগুলোর একটি।
-
-    কারণ আজকের দিনেই তুমি এই পৃথিবীতে
-    এসেছিলে।
-
-    <br><br>
-
-    তোমার জীবনের প্রতিটি দিন হাসি,
-    আনন্দ ও ভালোবাসায় ভরে উঠুক।
-
-    তোমার প্রতিটি স্বপ্ন পূরণ হোক।
-
-    <br><br>
-
-    I may not be perfect,
-    but my love for you is real.
-
-    <br><br>
-
-    Happy Birthday My Princess! 💗
-
-  </p>
-
-  <div class="divider"></div>
-
-  <button class="pink-btn" onclick="openLetter()">
-    💌 OPEN MY LOVE LETTER
-  </button>
-
-  <div class="letter" id="letter">
-
-    <h3>My Dearest Sonai</h3>
-
-    My Love,
-
-    <br><br>
-
-    জানো, তোমাকে আমার জীবনে পাওয়াটা
-    আমার কাছে অনেক বড় একটা উপহার।
-
-    <br><br>
-
-    তোমার সঙ্গে কাটানো ছোট ছোট মুহূর্তগুলো
-    আমার কাছে অনেক দামি।
-
-    <br><br>
-
-    আমি চাই তোমার হাসির কারণ হতে,
-    তোমার খারাপ সময়ের ভরসা হতে
-    এবং তোমার প্রতিটি স্বপ্নের পাশে থাকতে।
-
-    <br><br>
-
-    হয়তো সবসময় মুখে বলে উঠতে পারি না,
-    কিন্তু তুমি আমার কাছে কতটা স্পেশাল
-    সেটা ভাষায় বোঝানো কঠিন।
-
-    <br><br>
-
-    তোমাকে আজ, আগামীকাল
-    এবং প্রতিটি আগামী দিনে
-    এভাবেই ভালোবেসে যেতে চাই।
-
-    <br><br>
-
-    <div style="text-align:center">
-      <span class="script" style="font-size:38px">
-        I Love You Sonai
-      </span>
-      <br>
-      Forever Yours ❤️
+    <h2>My Wish For You</h2>
+    <div class="letter-card">
+      <p>
+        Happy Birthday, my love! ❤️<br><br>
+        May your life always be filled with happiness,
+        beautiful dreams, endless smiles and countless
+        reasons to celebrate.<br><br>
+        I wish I could make every single day as beautiful
+        as your smile.<br><br>
+        You are precious, you are special,
+        and you will always have a place in my heart.<br><br>
+        Happy Birthday, Sonai! 💖
+      </p>
     </div>
 
-  </div>
+    <button onclick="celebrate()">Celebrate Again 🎆</button>
+  </section>
 
-  <br>
-
-  <button class="pink-btn" onclick="openSurprise()">
-    🎁 ONE LAST SURPRISE
-  </button>
-
-  <div id="surprise">
-
-    <div style="font-size:65px">💝</div>
-
-    <div class="section-title">
-      A Promise From My Heart
-    </div>
-
-    I don't promise a perfect life.
-
-    But I promise to keep choosing you,
-    respecting you and making memories
-    with you.
-
-    <br><br>
-
-    No matter how many birthdays come,
-    I hope I get to wish you every year.
-
-    <br><br>
-
-    <span class="script" style="font-size:40px">
-      You Are My Forever
-    </span>
-
-    <br><br>
-
-    ❤️🌹❤️
-
-  </div>
-
-</section>
-
-<footer>
-  DESIGNED WITH LOVE<br><br>
-  ONLY FOR MY SONAI ❤️<br>
-  22 • 11 • 2026
-</footer>
+  <footer>
+    Made with endless love, just for Sonai ❤️
+  </footer>
 
 </div>
 
 <script>
+/* Birthday: 22 November 2026, 00:00 India time */
+const birthdayDate = new Date("2026-11-22T00:00:00+05:30");
 
-// DATE: 22 NOVEMBER 2026 MIDNIGHT IST
+let birthdayOpened = false;
 
-const target = new Date(
-  "2026-11-18T22:50:00+05:30"
-).getTime();
+function openSurprise() {
+  document.getElementById("entrance").style.display = "none";
+  document.getElementById("main").style.display = "block";
 
-let birthdayStarted = false;
+  createHearts();
 
-function openWebsite(){
-
-document.getElementById("intro").style.opacity="0";
-
-setTimeout(()=>{
-
-document.getElementById("intro").style.display="none";
-document.getElementById("main").style.display="block";
-
-},900);
-
+  if (new Date() >= birthdayDate) {
+    showBirthday();
+  }
 }
 
-function updateCountdown(){
+/* Countdown */
+function updateCountdown() {
+  const now = new Date();
+  const difference = birthdayDate - now;
 
-const diff = target-Date.now();
+  if (difference <= 0) {
+    document.getElementById("days").textContent = "00";
+    document.getElementById("hours").textContent = "00";
+    document.getElementById("minutes").textContent = "00";
+    document.getElementById("seconds").textContent = "00";
 
-if(diff<=0){
+    if (!birthdayOpened) showBirthday();
+    return;
+  }
 
-document.getElementById("countdownSection").style.display="none";
-document.getElementById("birthday").style.display="block";
+  const days = Math.floor(difference / 86400000);
+  const hours = Math.floor((difference % 86400000) / 3600000);
+  const minutes = Math.floor((difference % 3600000) / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
 
-if(!birthdayStarted){
-birthdayStarted=true;
-celebrate();
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+  document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+  document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
 }
 
-return;
+function showBirthday() {
+  if (birthdayOpened) return;
 
-}
+  birthdayOpened = true;
 
-document.getElementById("days").innerText=
-Math.floor(diff/86400000);
+  const birthday = document.getElementById("birthday");
+  birthday.style.display = "block";
 
-document.getElementById("hours").innerText=
-Math.floor(diff%86400000/3600000);
+  document.getElementById("countdownText").textContent =
+    "The wait is over! Happy Birthday Sonai! ❤️";
 
-document.getElementById("minutes").innerText=
-Math.floor(diff%3600000/60000);
-
-document.getElementById("seconds").innerText=
-Math.floor(diff%60000/1000);
-
+  birthday.scrollIntoView({ behavior: "smooth" });
+  celebrate();
 }
 
 setInterval(updateCountdown,1000);
 updateCountdown();
 
-function openLetter(){
+/* Floating hearts */
+function createHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.textContent = ["❤️","💕","💖","💗","💘"][
+      Math.floor(Math.random()*5)
+    ];
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15+Math.random()*22) + "px";
 
-const letter=document.getElementById("letter");
-
-letter.style.display="block";
-letter.scrollIntoView({behavior:"smooth",block:"center"});
-
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(),7000);
+  },700);
 }
 
-function openSurprise(){
+/* Fireworks */
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+let particles = [];
 
-const surprise=document.getElementById("surprise");
-
-surprise.style.display="block";
-surprise.scrollIntoView({behavior:"smooth",block:"center"});
-
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 
-// ROMANTIC ORIGINAL MUSIC
+window.addEventListener("resize",resizeCanvas);
+resizeCanvas();
 
-let audio=null;
-let musicTimer=null;
-let playing=false;
-let noteIndex=0;
+function burst(x,y) {
+  for (let i=0;i<65;i++) {
+    const angle = Math.random()*Math.PI*2;
+    const speed = Math.random()*5+1;
 
-const melody=[
-523.25,659.25,783.99,659.25,
-587.33,698.46,880,698.46,
-523.25,659.25,783.99,1046.5,
-880,783.99,659.25,523.25
-];
-
-function toggleMusic(){
-
-const AudioCtx=window.AudioContext||window.webkitAudioContext;
-
-if(!AudioCtx){
-alert("Audio is not supported.");
-return;
+    particles.push({
+      x,y,
+      vx:Math.cos(angle)*speed,
+      vy:Math.sin(angle)*speed,
+      life:70,
+      hue:Math.random()*360
+    });
+  }
 }
 
-if(playing){
+function animateFireworks() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
 
-clearInterval(musicTimer);
-playing=false;
+  particles = particles.filter(p => p.life>0);
 
-document.getElementById("music").innerText="♫ Play Music";
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.04;
+    p.life--;
 
-return;
+    ctx.beginPath();
+    ctx.fillStyle = `hsla(${p.hue},100%,65%,${p.life/70})`;
+    ctx.arc(p.x,p.y,2.5,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateFireworks);
 }
 
-if(!audio)audio=new AudioCtx();
+animateFireworks();
 
-audio.resume();
-
-playing=true;
-
-document.getElementById("music").innerText="♫ Pause Music";
-
-function playNote(){
-
-if(!playing)return;
-
-const osc=audio.createOscillator();
-const gain=audio.createGain();
-
-osc.type="sine";
-osc.frequency.value=melody[noteIndex%melody.length];
-
-gain.gain.setValueAtTime(.001,audio.currentTime);
-gain.gain.linearRampToValueAtTime(.10,audio.currentTime+.08);
-gain.gain.exponentialRampToValueAtTime(.001,audio.currentTime+.7);
-
-osc.connect(gain);
-gain.connect(audio.destination);
-
-osc.start();
-osc.stop(audio.currentTime+.7);
-
-noteIndex++;
-
+function celebrate() {
+  for (let i=0;i<7;i++) {
+    setTimeout(() => {
+      burst(
+        Math.random()*canvas.width,
+        Math.random()*canvas.height*.65
+      );
+    },i*350);
+  }
 }
-
-playNote();
-
-musicTimer=setInterval(playNote,650);
-
-}
-
-// FLOATING HEARTS
-
-setInterval(()=>{
-
-const symbols=["❤️","💖","💕","🌹","✨","💗"];
-
-const el=document.createElement("div");
-
-el.className="particle";
-el.innerText=symbols[Math.floor(Math.random()*symbols.length)];
-
-el.style.left=Math.random()*100+"vw";
-el.style.fontSize=(16+Math.random()*22)+"px";
-
-document.body.appendChild(el);
-
-setTimeout(()=>el.remove(),7000);
-
-},500);
-
-// FIREWORKS
-
-const canvas=document.getElementById("fireworks");
-const ctx=canvas.getContext("2d");
-
-let particles=[];
-let fireworksRunning=false;
-
-function resize(){
-
-canvas.width=innerWidth;
-canvas.height=innerHeight;
-
-}
-
-resize();
-
-window.addEventListener("resize",resize);
-
-function burst(){
-
-const x=Math.random()*canvas.width;
-const y=Math.random()*canvas.height*.65;
-
-const colors=[
-"#ff1680","#ffd700","#ffffff",
-"#00ffff","#ff8bc6","#b58aff"
-];
-
-for(let i=0;i<75;i++){
-
-const angle=Math.PI*2*i/75;
-const speed=1+Math.random()*5;
-
-particles.push({
-
-x,y,
-vx:Math.cos(angle)*speed,
-vy:Math.sin(angle)*speed,
-life:70+Math.random()*30,
-color:colors[Math.floor(Math.random()*colors.length)]
-
-});
-
-}
-
-}
-
-function draw(){
-
-if(!fireworksRunning)return;
-
-ctx.clearRect(0,0,canvas.width,canvas.height);
-
-for(let i=particles.length-1;i>=0;i--){
-
-const p=particles[i];
-
-p.x+=p.vx;
-p.y+=p.vy;
-p.vy+=.035;
-p.life--;
-
-ctx.globalAlpha=Math.max(0,p.life/100);
-ctx.fillStyle=p.color;
-
-ctx.beginPath();
-ctx.arc(p.x,p.y,2.5,0,Math.PI*2);
-ctx.fill();
-
-if(p.life<=0)particles.splice(i,1);
-
-}
-
-ctx.globalAlpha=1;
-
-requestAnimationFrame(draw);
-
-}
-
-function celebrate(){
-
-fireworksRunning=true;
-
-for(let i=0;i<7;i++){
-
-setTimeout(burst,i*400);
-
-}
-
-setInterval(burst,1200);
-
-draw();
-
-}
-
 </script>
 
 </body>
