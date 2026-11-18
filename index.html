@@ -1,13 +1,27 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#170817">
-<title>Happy Birthday Sonai ❤️</title>
+<meta name="theme-color" content="#160713">
+
+<title>শুভ জন্মদিন সোনাই ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --pink: #ff8eb8;
+  --rose: #ff4f91;
+  --gold: #f4d49b;
+  --cream: #fff0e9;
+  --dark: #160713;
+  --wine: #351021;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,270 +33,485 @@ html {
 }
 
 body {
-  font-family: Georgia, serif;
-  background: #120813;
+  background: var(--dark);
   color: white;
-  text-align: center;
+  font-family: 'Hind Siliguri', sans-serif;
   overflow-x: hidden;
 }
 
 button {
-  padding: 14px 27px;
-  border: 1px solid #ffb2d2;
-  border-radius: 35px;
-  background: linear-gradient(135deg,#ff2678,#9d0758);
-  color: white;
-  font-size: 15px;
+  font-family: inherit;
   cursor: pointer;
-  box-shadow: 0 0 22px #ff267855;
-  transition: .3s;
+  border: none;
 }
 
 button:active {
-  transform: scale(.95);
+  transform: scale(.97);
 }
 
-h1,h2 {
-  color: #ffacd0;
-  text-shadow: 0 0 16px #ff267866;
-  margin-bottom: 18px;
-}
-
-p {
-  color: #f8dce9;
-  line-height: 1.8;
-}
-
-section {
-  padding: 65px 18px;
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
 }
 
 #main {
   display: none;
 }
 
-/* INTRO SCREEN */
+.hidden {
+  display: none !important;
+}
+
+/* BACKGROUND */
+
+.background-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 15%,#76234755,transparent 45%),
+    radial-gradient(ellipse at 85% 75%,#a52d5a33,transparent 45%),
+    linear-gradient(145deg,#160713,#240b1b,#10060f);
+}
+
+.star {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: #ffd9e9;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff8eb8;
+  pointer-events: none;
+  animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.5); }
+}
+
+/* BUTTONS */
+
+.premium-btn {
+  padding: 14px 28px;
+  border-radius: 40px;
+  color: #351021;
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(135deg,#ffe2bd,#f6a8c5,#ffe0b9);
+  box-shadow: 0 0 25px #ff8eb855;
+  transition: .3s;
+}
+
+.premium-btn:hover {
+  box-shadow: 0 0 35px #ff8eb8aa;
+  transform: translateY(-3px);
+}
+
+.outline-btn {
+  padding: 12px 25px;
+  border: 1px solid #f4b5d0;
+  border-radius: 30px;
+  color: #ffe5ef;
+  background: #ffffff0c;
+  font-size: 16px;
+}
+
+/* INTRO */
+
 #entrance {
   position: fixed;
   inset: 0;
-  z-index: 1000;
-  background: radial-gradient(circle at center,#54102f,#120813 75%);
+  z-index: 100;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  text-align: center;
   padding: 25px;
+  background:
+    radial-gradient(circle at center,#70213f,#250b20 55%,#10060f);
+}
+
+.intro-crown {
+  color: var(--gold);
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.intro-heart {
+  font-size: 65px;
+  animation: heartbeat 1.5s infinite;
+  filter: drop-shadow(0 0 20px #ff4f91);
 }
 
 #entrance h1 {
-  font-size: clamp(34px,8vw,48px);
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(35px,9vw,55px);
+  color: #ffe1ec;
+  margin: 15px 0;
 }
 
 #entrance p {
-  margin: 15px 0 25px;
-}
-
-.big-heart {
-  font-size: 65px;
-  animation: heartbeat 1.3s infinite;
+  color: #f5c9dc;
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 28px;
 }
 
 @keyframes heartbeat {
-  50% { transform: scale(1.25); }
+  50% { transform: scale(1.2); }
 }
 
 /* HERO */
+
 .hero {
-  min-height: 90vh;
-  padding: 45px 18px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background:
-    linear-gradient(#160416aa,#160416dd),
-    radial-gradient(circle at top,#8b174d,#160416 75%);
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 65px 18px;
+  position: relative;
+}
+
+.top-label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .hero h1 {
-  font-size: clamp(38px,9vw,65px);
-  margin-top: 18px;
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(43px,10vw,75px);
+  line-height: 1.15;
+  margin: 17px 0;
+  background: linear-gradient(120deg,#fff0e9,#ff9fc4,#f8d8a5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 18px #ff6da355);
 }
 
 .hero-subtitle {
   font-size: 18px;
-  margin: 10px 0;
+  color: #f4c8db;
+  margin-bottom: 20px;
 }
 
-.main-photo {
-  margin: 25px auto;
+.main-frame {
+  position: relative;
+  width: min(82vw,340px);
+  padding: 9px;
+  margin: 20px auto;
+  border-radius: 24px;
+  background: linear-gradient(135deg,#f8d8a5,#ff80b0,#fff0d4);
+  box-shadow: 0 0 40px #ff4f9155;
 }
 
-.main-photo img {
-  width: min(82vw,330px);
+.main-frame::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid #f4d49b66;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.main-frame img {
+  width: 100%;
   aspect-ratio: 4/5;
+  display: block;
   object-fit: cover;
-  border: 3px solid #ff8ab8;
-  border-radius: 23px;
-  box-shadow: 0 0 30px #ff267855;
+  border-radius: 17px;
 }
 
-.main-caption {
-  color: #ffb4d1;
-  margin-top: 10px;
+.photo-caption {
+  color: var(--gold);
+  font-size: 15px;
+  margin: 5px 0 25px;
 }
 
 /* COUNTDOWN */
+
+.countdown-heading {
+  color: #ffe1ec;
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
 .countdown {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 25px 0;
 }
 
 .time-box {
   min-width: 72px;
-  padding: 15px 10px;
-  border: 1px solid #ff8ab866;
-  border-radius: 15px;
-  background: #ffffff12;
-  box-shadow: 0 0 18px #ff267822;
+  padding: 14px 9px;
+  border: 1px solid #ffb0cf66;
+  border-radius: 16px;
+  background: linear-gradient(145deg,#ffffff18,#ffffff05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px #0004;
 }
 
 .time-box strong {
   display: block;
-  font-size: 27px;
-  color: #ffacd0;
+  color: #ffd7e7;
+  font-family: 'Playfair Display',serif;
+  font-size: 29px;
 }
 
 .time-box span {
+  color: #f5bed5;
   font-size: 11px;
   letter-spacing: 1px;
 }
 
-/* LOVE LETTER */
-.letter-card {
-  max-width: 600px;
-  margin: 25px auto;
-  padding: 28px 23px;
-  background: linear-gradient(145deg,#ffffff14,#ff26780b);
-  border: 1px solid #ff8ab855;
-  border-radius: 22px;
-  box-shadow: 0 10px 35px #0005;
+.countdown-note {
+  margin-top: 20px;
+  color: var(--gold);
+  font-size: 15px;
 }
 
-.letter-card p {
+/* DECORATIVE SECTIONS */
+
+.section {
+  padding: 75px 18px;
+  text-align: center;
+}
+
+.section-heading {
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(30px,7vw,43px);
+  color: #ffd8e7;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: #e8b8ce;
   font-size: 16px;
 }
 
+.gold-line {
+  width: 75px;
+  height: 2px;
+  margin: 22px auto;
+  background: linear-gradient(90deg,transparent,#f4d49b,transparent);
+}
+
 /* MIDNIGHT SURPRISE */
+
 #birthday {
   display: none;
-  padding: 75px 18px;
+  text-align: center;
+  padding: 65px 17px 75px;
   background:
-    radial-gradient(circle at top,#741641,#220b20 60%,#120813);
-  animation: reveal 1.5s ease;
+    radial-gradient(ellipse at top,#762044aa,transparent 60%);
+  animation: reveal 2s ease;
 }
 
 @keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.crown {
+  font-size: 35px;
+  color: var(--gold);
 }
 
 .birthday-title {
-  font-size: clamp(36px,9vw,62px);
-  animation: glow 2s infinite alternate;
+  font-family: 'Playfair Display',serif;
+  font-size: clamp(38px,9vw,65px);
+  line-height: 1.2;
+  margin: 20px 0;
+  background: linear-gradient(120deg,#fff0d6,#ff9cc2,#ffe3ad);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 10px #ff4a91; }
-  to { text-shadow: 0 0 35px #ffacd0,0 0 60px #ff2678; }
+.birthday-date {
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 15px;
 }
 
 .cake {
-  font-size: 105px;
-  margin: 25px 0;
-  animation: cakeBounce 2s infinite;
+  font-size: 100px;
+  margin: 28px 0;
+  filter: drop-shadow(0 0 25px #ff8eb866);
+  animation: cakeDance 2s infinite;
 }
 
-@keyframes cakeBounce {
-  50% { transform: translateY(-12px); }
+@keyframes cakeDance {
+  0%,100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-12px) rotate(3deg); }
 }
 
-/* EXTRA MEMORIES */
-.midnight-memories {
+/* GLASS CARDS */
+
+.premium-card {
+  max-width: 650px;
+  margin: 28px auto;
+  padding: 28px 23px;
+  border: 1px solid #f8b6d166;
+  border-radius: 23px;
+  background: linear-gradient(145deg,#ffffff18,#ffffff07);
+  box-shadow: 0 15px 45px #0005;
+  backdrop-filter: blur(12px);
+}
+
+.premium-card p {
+  color: #ffe5ef;
+  font-size: 17px;
+  line-height: 2;
+}
+
+.wish-title {
+  font-size: 25px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* LOVE LETTER */
+
+.envelope {
+  max-width: 550px;
+  margin: 35px auto;
+  padding: 30px 20px;
+  border: 1px solid #e8bd8d99;
+  border-radius: 22px;
+  background: linear-gradient(145deg,#482039,#241021);
+  box-shadow: 0 15px 40px #0005;
+}
+
+.envelope-icon {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.envelope h2 {
+  color: #ffe0c0;
+  font-family: 'Playfair Display',serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+#loveLetter {
+  display: none;
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 30px 23px;
+  border-radius: 20px;
+  background: linear-gradient(145deg,#fff1e4,#f8d4df);
+  color: #54213b;
+  text-align: left;
+  box-shadow: 0 15px 40px #0005;
+  animation: reveal 1s ease;
+}
+
+#loveLetter p {
+  color: #54213b;
+  font-size: 17px;
+  line-height: 2;
+}
+
+#loveLetter h3 {
+  color: #8c315b;
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
   max-width: 900px;
-  margin: 60px auto 0;
-}
-
-.memories-grid {
+  margin: 35px auto;
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 16px;
-  margin: 30px auto;
+  gap: 17px;
 }
 
-.memory-photo {
+.gallery-card {
   padding: 9px;
-  background: #ffffff12;
-  border: 1px solid #ff8ab866;
+  background: linear-gradient(145deg,#ffffff20,#ffffff07);
+  border: 1px solid #f7b3ce77;
   border-radius: 18px;
-  box-shadow: 0 8px 25px #0006;
+  box-shadow: 0 12px 30px #0005;
   transition: .3s;
 }
 
-.memory-photo:active {
-  transform: scale(.97);
+.gallery-card:hover {
+  transform: translateY(-5px);
 }
 
-.memory-photo img {
+.gallery-card img {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
+  border-radius: 12px;
 }
 
-.memory-photo p {
-  font-size: 14px;
-  padding: 12px 3px 5px;
-  color: #ffc0dc;
+.gallery-card p {
+  color: #ffe0eb;
+  padding: 13px 3px 6px;
+  font-size: 15px;
 }
 
-/* VOICE */
+/* VOICE MESSAGE */
+
 .voice-card {
-  max-width: 550px;
+  max-width: 580px;
   margin: 40px auto;
-  padding: 27px 20px;
-  background: #ffffff12;
-  border: 1px solid #ff8ab866;
-  border-radius: 22px;
-  box-shadow: 0 0 25px #ff267822;
+  padding: 30px 22px;
+  border: 1px solid #f3c88d99;
+  border-radius: 24px;
+  background: linear-gradient(145deg,#492039,#241020);
+  box-shadow: 0 0 35px #ff8eb822;
+}
+
+.voice-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.voice-card h2 {
+  color: #ffe0c0;
+  font-family: 'Playfair Display',serif;
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.voice-card p {
+  color: #f5d6e4;
+  line-height: 1.8;
 }
 
 .voice-card audio {
   width: 100%;
-  margin-top: 22px;
-}
-
-.voice-icon {
-  font-size: 42px;
-  margin: 12px;
+  margin-top: 23px;
 }
 
 /* FLOATING HEARTS */
+
 .floating-heart {
   position: fixed;
   bottom: -40px;
-  z-index: 20;
   pointer-events: none;
+  z-index: 40;
   animation: floatUp 7s linear forwards;
 }
 
@@ -293,33 +522,52 @@ section {
   }
 }
 
-/* FIREWORKS */
-#fireworks {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 30;
-}
-
 footer {
-  padding: 35px 15px;
-  color: #e8a4c1;
-  font-size: 13px;
+  padding: 40px 15px;
+  text-align: center;
+  color: #e6b5cb;
+  font-size: 14px;
 }
 
-@media(max-width:400px) {
-  .memories-grid {
+.footer-heart {
+  color: #ff80ae;
+  font-size: 22px;
+  margin: 10px;
+}
+
+@media(max-width:420px) {
+  .time-box {
+    min-width: 65px;
+    padding: 12px 7px;
+  }
+
+  .time-box strong {
+    font-size: 25px;
+  }
+
+  .gallery {
     gap: 10px;
   }
 
-  .memory-photo {
+  .gallery-card {
     padding: 6px;
   }
 
-  .memory-photo p {
-    font-size: 12px;
+  .gallery-card p {
+    font-size: 13px;
+  }
+
+  .premium-card p,
+  #loveLetter p {
+    font-size: 15px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 </style>
@@ -327,232 +575,350 @@ footer {
 
 <body>
 
+<div class="background-glow"></div>
 <canvas id="fireworks"></canvas>
 
-<!-- SECRET ENTRANCE -->
+<!-- SECRET INTRO -->
 <div id="entrance">
-  <div class="big-heart">❤️</div>
-  <h1>Hey, Sonai...</h1>
+
+  <div class="intro-crown">✦ A SPECIAL GIFT ✦</div>
+
+  <div class="intro-heart">❤️</div>
+
+  <h1>শুধু তোমার জন্য, সোনাই...</h1>
+
   <p>
-    Someone has created a little world<br>
-    full of love, only for you.
+    পৃথিবীর সব সুন্দর মুহূর্তের মধ্যে<br>
+    তুমি আমার সবচেয়ে প্রিয় মুহূর্ত।<br><br>
+    তোমার জন্য ছোট্ট একটা ভালোবাসার পৃথিবী বানিয়েছি।
   </p>
-  <button onclick="openWebsite()">
-    Open Your Surprise 💌
+
+  <button class="premium-btn" onclick="openWebsite()">
+    তোমার উপহারটি খোলো 💌
   </button>
+
 </div>
 
 <!-- MAIN WEBSITE -->
 <div id="main">
 
-  <!-- HERO + MAIN PHOTO -->
-  <div class="hero">
+  <!-- HERO -->
+  <header class="hero">
 
-    <div class="big-heart">❤️</div>
+    <p class="top-label">A LITTLE WORLD OF LOVE</p>
 
-    <h1>My Beautiful Sonai</h1>
+    <h1>My Beautiful<br>Sonai</h1>
 
     <p class="hero-subtitle">
-      You are my favourite chapter of life.
+      তুমি আমার জীবনের সবচেয়ে সুন্দর অনুভূতি।
     </p>
 
-    <div class="main-photo">
-      <img src="couple.jpg" alt="Sonai and Me">
-      <p class="main-caption">
-        My Favourite Person, My Favourite Memory ❤️
-      </p>
+    <!-- MAIN PHOTO: KEEP SAME NAME -->
+    <div class="main-frame">
+      <img src="couple.jpg" alt="আমাদের সুন্দর মুহূর্ত">
     </div>
 
-    <p>Counting every moment until your special day...</p>
+    <p class="photo-caption">
+      তোমার হাসিতেই আমার পৃথিবীর সবটুকু আনন্দ ❤️
+    </p>
 
-    <div class="countdown" id="countdown">
+    <div class="gold-line"></div>
+
+    <p class="countdown-heading">
+      তোমার বিশেষ মুহূর্ত আসতে আর বাকি...
+    </p>
+
+    <div class="countdown">
 
       <div class="time-box">
         <strong id="days">00</strong>
-        <span>DAYS</span>
+        <span>দিন</span>
       </div>
 
       <div class="time-box">
         <strong id="hours">00</strong>
-        <span>HOURS</span>
+        <span>ঘণ্টা</span>
       </div>
 
       <div class="time-box">
         <strong id="minutes">00</strong>
-        <span>MINUTES</span>
+        <span>মিনিট</span>
       </div>
 
       <div class="time-box">
         <strong id="seconds">00</strong>
-        <span>SECONDS</span>
+        <span>সেকেন্ড</span>
       </div>
 
     </div>
 
-    <p id="countdownText">
-      A beautiful surprise is waiting for you ❤️
+    <p class="countdown-note" id="countdownNote">
+      তোমার জন্য একটা জাদুকরী মুহূর্ত অপেক্ষা করছে... ✨
     </p>
 
-  </div>
+  </header>
 
-  <!-- BEFORE BIRTHDAY LOVE LETTER -->
-  <section>
+  <!-- SMALL PRE-BIRTHDAY SECTION -->
+  <section class="section">
 
-    <h2>A Little Message For You 💌</h2>
+    <p class="top-label">MADE WITH LOVE</p>
 
-    <div class="letter-card">
-      <p>
-        My dearest Sonai,<br><br>
+    <h2 class="section-heading">
+      একটা ছোট্ট কথা...
+    </h2>
 
-        Some people make life beautiful just by being in it.
-        You are one of those precious people in my life.<br><br>
+    <div class="gold-line"></div>
 
-        Your smile makes my day brighter,
-        and every moment with you becomes a memory
-        worth keeping forever.<br><br>
-
-        I hope this little surprise brings a smile
-        to your beautiful face.<br><br>
-
-        With lots of love ❤️
-      </p>
-    </div>
+    <p class="section-subtitle">
+      জীবনে অনেক কিছুই পাওয়া যায়,<br>
+      কিন্তু কিছু মানুষ থাকে যারা নিজের অজান্তেই<br>
+      জীবনটাকে অনেক বেশি সুন্দর করে তোলে।<br><br>
+      তুমি আমার কাছে ঠিক তেমনই একজন। ❤️
+    </p>
 
   </section>
 
-  <!-- MIDNIGHT SURPRISE ONLY -->
+  <!-- MIDNIGHT SURPRISE -->
   <section id="birthday">
 
-    <div class="big-heart">❤️</div>
+    <div class="crown">✦ ✧ ✦</div>
 
     <h1 class="birthday-title">
-      HAPPY BIRTHDAY SONAI!
+      শুভ জন্মদিন<br>আমার সোনাই! ❤️
     </h1>
 
-    <p style="font-size:20px">
-      22 November 2026
+    <p class="birthday-date">
+      ২২ নভেম্বর ২০২৬
     </p>
 
     <div class="cake">🎂</div>
 
-    <h2>My Birthday Wish For You</h2>
+    <p class="section-subtitle">
+      আজকের দিনটা শুধু তোমার।<br>
+      আজ শুধু হাসবে, আনন্দ করবে আর অনেক ভালোবাসা পাবে।
+    </p>
 
-    <div class="letter-card">
+    <div class="gold-line"></div>
+
+    <!-- BENGALI BIRTHDAY WISH -->
+    <div class="premium-card">
+
+      <h2 class="wish-title">
+        তোমার জন্য আমার জন্মদিনের শুভেচ্ছা 💖
+      </h2>
+
       <p>
-        Happy Birthday, my special one! ❤️<br><br>
+        শুভ জন্মদিন, আমার প্রিয় সোনাই! ❤️<br><br>
 
-        May your life be filled with endless happiness,
-        beautiful dreams, success and countless smiles.<br><br>
+        তোমার জীবনের প্রতিটি সকাল যেন নতুন আশা নিয়ে আসে,
+        প্রতিটি দিন যেন আনন্দে ভরে ওঠে,
+        আর তোমার প্রতিটি স্বপ্ন যেন একদিন সত্যি হয়।<br><br>
 
-        May every new day bring you reasons to smile
-        and every dream in your heart come true.<br><br>
+        তোমার মুখের হাসিটা যেন কখনও ম্লান না হয়।
+        জীবনে যত বাধাই আসুক, তুমি যেন সবসময়
+        সাহস নিয়ে এগিয়ে যেতে পারো।<br><br>
 
-        You are precious, you are special,
-        and you will always have a beautiful place
-        in my heart.<br><br>
+        তোমার জীবনে আসুক অফুরন্ত সুখ, শান্তি,
+        ভালোবাসা আর অসংখ্য সুন্দর মুহূর্ত।<br><br>
 
-        Happy Birthday, Sonai! 💖
+        আজকের এই বিশেষ দিনে আমার একটাই চাওয়া—
+        তুমি সবসময় ভালো থেকো, হাসিখুশি থেকো।<br><br>
+
+        অনেক অনেক ভালোবাসা ও শুভেচ্ছা রইল
+        তোমার জন্য। ❤️
       </p>
+
     </div>
 
-    <!-- EXTRA FOUR PHOTOS -->
-    <div class="midnight-memories">
+    <!-- LOVE LETTER ENVELOPE -->
+    <div class="envelope">
 
-      <h2>Our Special Moments 📸</h2>
+      <div class="envelope-icon">💌</div>
 
-      <p>
-        Four more memories, saved forever in my heart.
+      <h2>তোমার জন্য একটি চিঠি</h2>
+
+      <p style="margin-bottom:22px">
+        কিছু কথা আছে, যা হয়তো মুখে বলা হয়ে ওঠে না...
+        আজ সেগুলোই লিখে রাখলাম তোমার জন্য।
       </p>
 
-      <div class="memories-grid">
+      <button class="premium-btn" onclick="openLetter()">
+        চিঠিটা খুলে দেখো ❤️
+      </button>
 
-        <div class="memory-photo">
+    </div>
+
+    <!-- HIDDEN LOVE LETTER -->
+    <div id="loveLetter">
+
+      <h3>আমার প্রিয় সোনাই... ❤️</h3>
+
+      <p>
+        জানো সোনাই,<br><br>
+
+        তোমাকে নিয়ে কী লিখব, সেটা ভাবতে গেলেই
+        অনেক কথা মনে আসে। কিন্তু সব কথা কি আর
+        সুন্দর করে শব্দে প্রকাশ করা যায়?<br><br>
+
+        তুমি আমার কাছে শুধু একজন মানুষ নও,
+        তুমি আমার অনেক সুন্দর অনুভূতির একটা অংশ।
+        তোমার হাসি, তোমার কথা, তোমার ছোট ছোট
+        অভিমান—সবকিছুই আমার কাছে ভীষণ প্রিয়।<br><br>
+
+        হয়তো আমি সবসময় মনের কথাগুলো ঠিকভাবে
+        বোঝাতে পারি না। হয়তো সবসময় তোমাকে
+        বুঝিয়ে উঠতে পারি না তুমি আমার কাছে কতটা
+        স্পেশাল। কিন্তু বিশ্বাস করো, তোমার ভালো থাকা
+        আর তোমার মুখের হাসি আমার কাছে অনেক মূল্যবান।<br><br>
+
+        আমি চাই তোমার জীবনের প্রতিটি জন্মদিন
+        আগের বছরের চেয়েও বেশি সুন্দর হোক।
+        তোমার সব ইচ্ছে পূরণ হোক,
+        তোমার চোখে কখনও কষ্টের জল না আসুক,
+        আর তোমার মুখের হাসিটা সারাজীবন এমনই থাকুক।<br><br>
+
+        আজকের এই ছোট্ট উপহারটা হয়তো খুব বড় কিছু নয়,
+        কিন্তু এর প্রতিটি অংশে আমার অনেকটা ভালোবাসা
+        লুকিয়ে আছে।<br><br>
+
+        নিজের যত্ন নিও, অনেক ভালো থেকো।
+        আর এভাবেই সবসময় হাসতে থেকো।<br><br>
+
+        <strong>ইতি,</strong><br>
+        <strong>তোমারই একজন ভালোবাসার মানুষ। ❤️</strong>
+      </p>
+
+    </div>
+
+    <!-- FOUR EXTRA PHOTOS -->
+    <div class="section">
+
+      <p class="top-label">OUR LITTLE WORLD</p>
+
+      <h2 class="section-heading">
+        আমাদের কিছু সুন্দর স্মৃতি 📸
+      </h2>
+
+      <div class="gold-line"></div>
+
+      <p class="section-subtitle">
+        কিছু ছবি, কিছু মুহূর্ত,<br>
+        আর অনেকটা ভালোবাসা...
+      </p>
+
+      <div class="gallery">
+
+        <div class="gallery-card">
           <img src="our-first-moment.jpg"
-               alt="Our First Moment">
-          <p>Our Beautiful Beginning ❤️</p>
+               alt="আমাদের প্রথম সুন্দর মুহূর্ত">
+          <p>আমাদের সুন্দর শুরুর গল্প ❤️</p>
         </div>
 
-        <div class="memory-photo">
+        <div class="gallery-card">
           <img src="my-sweetheart.jpg"
-               alt="My Sweetheart">
-          <p>Your Smile, My Happiness 💕</p>
+               alt="আমার প্রিয় মানুষ">
+          <p>তোমার হাসি, আমার আনন্দ 💕</p>
         </div>
 
-        <div class="memory-photo">
+        <div class="gallery-card">
           <img src="endless-love.jpg"
-               alt="Endless Love">
-          <p>Moments To Remember 🌹</p>
+               alt="আমাদের ভালোবাসা">
+          <p>মনে রাখার মতো কিছু মুহূর্ত 🌹</p>
         </div>
 
-        <div class="memory-photo">
+        <div class="gallery-card">
           <img src="forever-together.jpg"
-               alt="Forever Together">
-          <p>Forever My Favourite Person 💖</p>
+               alt="আমাদের বিশেষ স্মৃতি">
+          <p>তুমি আমার সবচেয়ে প্রিয় ❤️</p>
         </div>
 
       </div>
 
     </div>
 
-    <!-- PERSONAL VOICE RECORDING -->
+    <!-- PERSONAL VOICE -->
     <div class="voice-card">
 
       <div class="voice-icon">🎧</div>
 
-      <h2>A Voice Message From Me</h2>
+      <h2>এবার আমার কণ্ঠে কিছু কথা...</h2>
 
       <p>
-        Sonai, this is something special,
-        recorded with love, just for you.
+        সোনাই, এই কথাগুলো আমি নিজের কণ্ঠে
+        শুধু তোমার জন্য রেকর্ড করেছি।<br>
+        মন দিয়ে একবার শুনবে কিন্তু! ❤️
       </p>
 
       <audio controls preload="none">
         <source src="wish.mp3" type="audio/mpeg">
-        Your browser does not support audio.
+        তোমার ব্রাউজার অডিও চালাতে পারছে না।
       </audio>
 
-      <p style="font-size:13px;margin-top:12px">
-        Press Play and listen to my heart ❤️
+      <p style="font-size:13px;margin-top:15px">
+        ভালোবাসা দিয়ে রেকর্ড করা, শুধুই তোমার জন্য। 💗
       </p>
 
     </div>
 
-    <button onclick="celebrate()">
-      Celebrate Again 🎆
+    <div class="gold-line"></div>
+
+    <h2 class="section-heading">
+      আবারও শুভ জন্মদিন, সোনাই! ❤️
+    </h2>
+
+    <p class="section-subtitle">
+      তোমার প্রতিটি দিন সুন্দর হোক।<br>
+      অনেক অনেক ভালোবাসা রইল।
+    </p>
+
+    <br>
+
+    <button class="premium-btn" onclick="celebrateAgain()">
+      আরও একবার উদযাপন করি! 🎆
     </button>
 
   </section>
 
   <footer>
-    Made with endless love, just for Sonai ❤️
-    <br><br>
-    Forever Special. Forever Yours.
+
+    <div class="footer-heart">♥</div>
+
+    <p>
+      তোমার জন্য তৈরি করা ছোট্ট এক ভালোবাসার পৃথিবী।
+    </p>
+
+    <p style="margin-top:12px;color:#f4d49b">
+      Forever Special • Forever Loved
+    </p>
+
   </footer>
 
 </div>
 
 <script>
 
-/* =================================
-   BIRTHDAY DATE
-   22 NOVEMBER 2026 - INDIA TIME
-================================= */
+/* ======================================
+   BIRTHDAY TIME: INDIA
+   22 NOVEMBER 2026 AT 12:00 AM
+====================================== */
 
 const birthdayDate =
-  new Date("2026-11-18T23:45:00+05:30");
+  new Date("2026-11-22T00:00:00+05:30");
 
-let birthdayOpened = false;
-let heartsStarted = false;
+let surpriseOpened = false;
+let heartTimerStarted = false;
 
-/* OPEN WEBSITE */
+/* OPEN MAIN WEBSITE */
+
 function openWebsite() {
 
   document.getElementById("entrance").style.display = "none";
+
   document.getElementById("main").style.display = "block";
 
-  if (!heartsStarted) {
+  if (!heartTimerStarted) {
     createHearts();
-    heartsStarted = true;
+    heartTimerStarted = true;
   }
 
   updateCountdown();
@@ -563,37 +929,41 @@ function openWebsite() {
 }
 
 /* COUNTDOWN */
+
 function updateCountdown() {
 
   const now = new Date();
-  const difference = birthdayDate - now;
+  const diff = birthdayDate - now;
 
-  if (difference <= 0) {
+  if (diff <= 0) {
 
     document.getElementById("days").textContent = "00";
     document.getElementById("hours").textContent = "00";
     document.getElementById("minutes").textContent = "00";
     document.getElementById("seconds").textContent = "00";
 
-    if (!birthdayOpened) {
+    document.getElementById("countdownNote").textContent =
+      "অপেক্ষার অবসান! আজ তোমার জন্মদিন! ❤️";
+
+    if (!surpriseOpened) {
       showBirthday();
     }
 
     return;
   }
 
-  const days = Math.floor(difference / 86400000);
+  const days = Math.floor(diff / 86400000);
 
   const hours = Math.floor(
-    (difference % 86400000) / 3600000
+    (diff % 86400000) / 3600000
   );
 
   const minutes = Math.floor(
-    (difference % 3600000) / 60000
+    (diff % 3600000) / 60000
   );
 
   const seconds = Math.floor(
-    (difference % 60000) / 1000
+    (diff % 60000) / 1000
   );
 
   document.getElementById("days").textContent = days;
@@ -609,34 +979,58 @@ function updateCountdown() {
 }
 
 /* AUTOMATIC MIDNIGHT SURPRISE */
+
 function showBirthday() {
 
-  if (birthdayOpened) return;
+  if (surpriseOpened) return;
 
-  birthdayOpened = true;
+  surpriseOpened = true;
 
-  const birthday = document.getElementById("birthday");
+  const section = document.getElementById("birthday");
 
-  birthday.style.display = "block";
+  section.style.display = "block";
 
-  document.getElementById("countdownText").textContent =
-    "The wait is over! Happy Birthday Sonai! ❤️";
-
-  celebrate();
+  celebrateAgain();
 
   setTimeout(() => {
-    birthday.scrollIntoView({
+
+    section.scrollIntoView({
       behavior: "smooth",
       block: "start"
     });
-  },500);
+
+  },700);
 }
 
 /* CHECK EVERY SECOND */
+
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
+/* LOVE LETTER OPEN */
+
+function openLetter() {
+
+  const letter = document.getElementById("loveLetter");
+
+  if (letter.style.display === "block") {
+    letter.style.display = "none";
+    return;
+  }
+
+  letter.style.display = "block";
+
+  setTimeout(() => {
+    letter.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  },100);
+}
+
 /* FLOATING HEARTS */
+
 function createHearts() {
 
   setInterval(() => {
@@ -645,24 +1039,43 @@ function createHearts() {
 
     heart.className = "floating-heart";
 
-    const symbols = ["❤️","💕","💖","💗","💘"];
+    const symbols = ["❤️","💗","💕","💖","💘","🌹"];
 
     heart.textContent =
-      symbols[Math.floor(Math.random()*symbols.length)];
+      
+symbols[Math.floor(Math.random()*symbols.length)];
 
     heart.style.left = Math.random()*100 + "vw";
 
     heart.style.fontSize =
-      (15 + Math.random()*22) + "px";
+      (15 + Math.random()*23) + "px";
 
     document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(),7000);
 
-  },800);
+  },650);
+}
+
+/* BACKGROUND STARS */
+
+for (let i=0;i<35;i++) {
+
+  const star = document.createElement("div");
+
+  star.className = "star";
+
+  star.style.left = Math.random()*100 + "vw";
+  star.style.top = Math.random()*100 + "vh";
+
+  star.style.animationDelay =
+    Math.random()*3 + "s";
+
+  document.body.appendChild(star);
 }
 
 /* FIREWORKS */
+
 const canvas = document.getElementById("fireworks");
 const ctx = canvas.getContext("2d");
 
@@ -682,6 +1095,7 @@ function resizeCanvas() {
 }
 
 window.addEventListener("resize",resizeCanvas);
+
 resizeCanvas();
 
 function burst(x,y) {
@@ -692,12 +1106,16 @@ function burst(x,y) {
     const speed = Math.random()*5+1;
 
     particles.push({
+
       x:x,
       y:y,
+
       vx:Math.cos(angle)*speed,
       vy:Math.sin(angle)*speed,
+
       life:75,
       hue:Math.random()*360
+
     });
   }
 }
@@ -721,9 +1139,10 @@ function animateFireworks() {
     ctx.beginPath();
 
     ctx.fillStyle =
-      `hsla(${p.hue},100%,65%,${p.life/75})`;
+      `hsla(${p.hue},100%,70%,${p.life/75})`;
 
     ctx.arc(p.x,p.y,2.5,0,Math.PI*2);
+
     ctx.fill();
 
   });
@@ -734,9 +1153,10 @@ function animateFireworks() {
 animateFireworks();
 
 /* CELEBRATION */
-function celebrate() {
 
-  for (let i=0;i<8;i++) {
+function celebrateAgain() {
+
+  for (let i=0;i<9;i++) {
 
     setTimeout(() => {
 
@@ -746,11 +1166,13 @@ function celebrate() {
       );
 
     },i*350);
+
   }
 }
 
 </script>
 
 </body>
-      </html>
+</html>
+
   
